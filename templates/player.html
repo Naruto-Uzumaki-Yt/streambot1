@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Streaming</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h2>🎬 Now Streaming</h2>
+
+<video controls autoplay>
+  <source src="/stream/{{id}}?hash={{hash}}" type="video/mp4">
+</video>
+
+<div class="buttons">
+
+  <a href="/download/{{id}}?hash={{hash}}" class="btn red">⬇ Download</a>
+
+  <a href="vlc://{{request.host_url}}stream/{{id}}?hash={{hash}}" class="btn">
+    VLC Player
+  </a>
+
+  <a href="intent://{{request.host_url}}stream/{{id}}?hash={{hash}}#Intent;package=com.mxtech.videoplayer.ad;end" class="btn">
+    MX Player
+  </a>
+
+</div>
+
+</body>
+</html>
