@@ -1,10 +1,13 @@
+import asyncio
+
+asyncio.set_event_loop(asyncio.new_event_loop())
+
 from flask import Flask, request, Response, render_template, abort
 from pyrogram import Client
 from config import *
 from database import get_file
 from utils import verify_hash
 from bson.objectid import ObjectId
-import asyncio
 
 app = Flask(__name__)
 
