@@ -11,8 +11,11 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-# ✅ START BOT IN BACKGROUND (NO WORKER NEEDED)
 def run_bot():
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
     from bot import bot
     bot.run()
 
